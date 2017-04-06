@@ -23,9 +23,6 @@ sqlplus omc/omc
 ===== cron job =====
 rep node: /etc/opt/oss/pm/cron/omc/
 
-===== common TA =====
-zheng yingakai
-
 ==== Jenkins debug ====
 ./runtest.sh -v CONFIG_FILE:conf/config_c1795.properties -t Verify_access_SAM_via_SSL --debugfile .dbg.txt testcases/CFS_269_SSL.txt
 
