@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-06-22T16:54:58+08:00
+
+====== snmp trap debug ======
+Created 星期三 22 六月 2016
+
+lbjbi -> node05 -> tcpdump -i any src 10.69.156.254 -> [[/var/opt/oss/log/NSN-idk]]
+
+==== open debug log ====
+
+Open the file /opt/oss/NSN-common_mediations/smx/conf/log4j.xml and replace OFF
+value with DEBUG in the appender ISDK_Debug_log
+<appender class="com.nsn.oes.ap.appender.RollingFileAppender"
+name="ISDK_Debug_log">
+<param name="threshold" value="OFF"/>
+<param name="File" value="/var/opt/oss/log/NSN-idk/isdk_debug0_0.
+log"/>
+<param name="maxFileSize" value="10MB"/>
+<param name="maxBackupIndex" value="49"/>
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%d{yyyy-MM-dd-
+'T'HH:mm:ss.SSSZ} | ${host} | %x | %-15t | %-5p | %c | %m%n"/>
+</layout>
+</appender>
+14:10
+
+sh /opt/oss/NSN-idk/isdk_runtime_platform_admin.sh Servicemix_Restart
+
+==== deactivate agent from backend ====
+ssh node05
+/etc/opt/oss/global/NSN-cmui/bin/ISDKFMActivationManager.sh --list
+/etc/opt/oss/global/NSN-cmui/bin/ISDKFMActivationManager.sh --deactivate --agentId PLMN-PLMN/VMGW-julia
+
+==== AP: ====
+1. sbc severity rule different
+2. TEXT is combined [[TA tags]] with AdditionalText
+

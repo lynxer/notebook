@@ -1,0 +1,56 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-11-16T15:15:58+08:00
+
+====== samo simulator tips ======
+Created 星期三 16 十一月 2016
+
+
+好像是 redhat 版本的问题。 
+那你用这两个命令来启动 
+
+nohup /opt/nokia/samo-simulator/3rdparty/wildfly-8.2.1.Final/bin/standalone.sh -c standalone-full.xml -b 10.69.156.232  > /dev/null 2>&1 &
+/opt/nokia/samo-simulator/3rdparty/wildfly-8.2.1.Final/standalone/log/server.log
+nohup java -jar -Djava.security.egd=file:/dev/./urandom -Dlogging.config=/opt/nokia/samo-simulator/conf/logback.xml -Dserver.port=8082 /opt/nokia/samo-simulator/bin/samo-simulator.jar >/dev/null 2>&1   & 
+/var/log/samo-sim/
+
+
+
+curl -X POST -H "Content-Type: application/xml" -H "Cache-Control: no-cache" -H "Postman-Token: c7579e3d-6ced-640a-62f3-790f152530ec" -d '<SOAP:Envelope 
+  xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+	<SOAP:Header>
+		<header xmlns="xmlapi_1.0">
+			<security>
+				<user>oss_client</user>
+				<password hashed="false">5620Sam!</password>
+			</security>
+			<requestID>SAMOAdapter:0</requestID>
+		</header>
+	</SOAP:Header>
+	<SOAP:Body>
+		<fm.FaultManager.testGeneratorStart xmlns="xmlapi_1.0">PM</fm.FaultManager.testGeneratorStart>
+	</SOAP:Body>
+</SOAP:Envelope>' "http://localhost:8089/xmlapi/test"
+
+sh samo-simulator.sh start_default_host
+sh samo-simulator.sh start
+sh samo-simulator.sh stop
+sh samo-simulator.sh restart
+
+start_default_host 和 start 的区别是 start_default_host 会无视下面配置文件里的几个 localhost，使用 ifconfig 上的公网 IP，
+一般就用 sh samo-simulator.sh start_default_host 就行。
+/opt/nokia/samo-simulator/conf/samo-simulator.conf
+FTPSERVER.hosturl, 
+MQ.jnp.host 
+MQ.java.naming.provider.url 
+/opt/nokia/samo-simulator/3rdparty/wildfly-8.2.1.Final/standalone/configuration/standalone-full.xml
+jboss.bind.address.management
+
+
+JMS的用这个增加/opt/nokia/samo-simulator/3rdparty/wildfly-8.2.1.Final/bin/add-user.sh -s true -a -u <username> -p <password>
+
+SAM medeation log目录
+cd [[/var/opt/oss/log/nokianetworks-sam_med]]
+
+修改client id
+/etc/opt/oss/global/nokianetworks-sam_med/conf/mediation-sam.properties

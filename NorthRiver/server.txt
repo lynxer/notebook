@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-07-10T14:06:12+08:00
+
+====== server ======
+Created 星期日 10 七月 2016
+
+==== ali cloud account: ====
+115.28.91.198
+enjoy0924ysj/a123@126
+root/6ca4c93222a77e443bd53f91b152AD		echo 'a123@126' | md5sum

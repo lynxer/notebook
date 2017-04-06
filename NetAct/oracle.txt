@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-06-28T12:07:57+08:00
+
+====== oracle ======
+Created 星期二 28 六月 2016
+
+==== cx_Oracle ====
+	http://www.dangtrinh.com/2014/07/install-cxoracle-513-in-ubuntu-1404.html
+
+	pip install cx_Oracle
+	download instantclient.zip, extract it to somewhere, and add the path to %path%
+	

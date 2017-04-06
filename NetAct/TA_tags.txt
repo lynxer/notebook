@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-07-29T14:27:27+08:00
+
+====== TA tags ======
+Created 星期五 29 七月 2016
+
+Launch monitor
+
+CSCF measurements define: [[/opt/cmbase/esymac/ESYMAC/extras/esymacstarter/schedule]]
+CSCF counters define: [[/opt/cmbase/esymac/o2mlTempDirectory/com.nsn.cscf-15.5/com.nsn.cscf.pmb]]
+PM files: [[/opt/cmbase/esymac/ESYMAC/extras/esymacstarter/results]]
+
+CSCF query measurement table names: node10 etlcolDBInfo.pl -t IMSCSF%RAW
+
+=== find NE PM raw table name ===
+smanager.pl status service rep
+etlcolDBInfo.pl -t IMSTIA%RAW
+sqlplus omc/omc
+
+
+
+===== cron job =====
+rep node: /etc/opt/oss/pm/cron/omc/
+
+===== common TA =====
+zheng yingakai
+
+==== Jenkins debug ====
+./runtest.sh -v CONFIG_FILE:conf/config_c1795.properties -t Verify_access_SAM_via_SSL --debugfile .dbg.txt testcases/CFS_269_SSL.txt
+
+==== websphere ====
+smanager.pl status | grep dmgr
+https://10.92.19.208:9043/admin

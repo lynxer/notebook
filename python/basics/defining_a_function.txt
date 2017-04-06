@@ -1,0 +1,87 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-06-27T15:57:03+08:00
+
+====== defining a function ======
+Created 星期一 27 六月 2016
+
+== def isum(*args): ==
+ '''Return a total of the numeric args'''
+ print('args ->', args)
+ total = 0
+ for arg in args:
+  total += arg
+ return total
+
+>>> functions.isum(1,2,3,4,5)
+('args ->', (1, 2, 3, 4, 5))
+15
+
+>>> functions.isum(range(10,20))
+('args ->', ([10, 11, 12, 13, 14, 15, 16, 17, 18, 19],))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/trapHandle/functions.py", line 6, in isum
+	total += arg
+TypeError: unsupported operand type(s) for +=: 'int' and 'list'
+
+== def ilist(alpha, beta='default', gamma='assumed'): ==
+ return alpha,beta,gamma
+
+
+>>> functions.ilist('required')
+('required', 'default', 'assumed')
+>>> alphabet
+{'alpha': 1, 'beta': 2, 'gamma': 3}
+>>> functions.ilist(**alphabet)
+(1, 2, 3)
+>>> functions.ilist(alphabet)
+({'alpha': 1, 'beta': 2, 'gamma': 3}, 'default', 'assumed')
+
+== argv_demo.py ==
+''' Accept command lines arguments to the module'''
+
+program = 'argv_demo.py'
+src = 'default.src'
+dest = 'default.dest'
+
+def show_config():
+ print('Here is the current configuration:')
+ print('Program: %s' % program)
+ print('Src: %s' % src)
+ print('Dest: %s' % dest)
+ print('Program: %s  Src: %s  Dest: %s' % (program, src, dest))
+
+if __name__ == '__main__':
+ import sys
+ print('Here is sys.argv: %s' % sys.argv)
+ if len(sys.argv) > 2:
+  program, src, dest = sys.argv[:3]
+ elif len(sys.argv) > 1:
+  program, src = sys.argv[:2]
+ else:
+  program = sys.argv[0]
+ show_config()
+
+==== more args handle ====
+The Python sys module provides access to any command-line arguments via the sys.argv. This serves two purposes −
+	sys.argv is the list of command-line arguments.
+	len(sys.argv) is the number of command-line arguments.
+Here sys.argv[0] is the program ie. script name.
+
+Python provided a getopt module that helps you parse command-line options and arguments. This module provides two functions and an exception to enable command line argument parsing.
+getopt.getopt method - getopt.getopt(args, options, [long_options])
+This method parses command line options and parameter list. Following is simple syntax for this method −
+
+	args: This is the argument list to be parsed.
+
+	options: This is the string of option letters that the script wants to recognize, with options that require an argument should be followed by a colon (:).
+
+	long_options: This is optional parameter and if specified, must be a list of strings with the names of the long options, which should be supported. Long options, which require an argument should be followed by an equal sign ('='). To accept only long options, options should be an empty string.
+
+	This method returns value consisting of two elements: the first is a list of (option, value) pairs. The second is the list of program arguments left after the option list was stripped.
+
+	Each option-and-value pair returned has the option as its first element, prefixed with a hyphen for short options (e.g., '-x') or two hyphens for long options (e.g., '--long-option').
+
+
+

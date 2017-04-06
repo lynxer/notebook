@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-08-05T14:00:26+08:00
+
+====== postgres ======
+Created 星期五 05 八月 2016
+sudo apt install postgresql postgresql-contrib
+
+==== postgresql roles and privileges ====
+https://www.postgresql.org/docs/9.0/static/user-manag.html
+shell:
+	createuser name
+	dropuser name
+db:
+	CREATE ROLE name;
+	DROP ROLE name;
+	SELECT rolname FROM pg_roles;
+	The psql program's \du meta-command is also useful for listing the existing roles.
+	
+CREATE ROLE name PASSWORD 'string'
+ALTER ROLE name PASSWORD 'string'
+
+==== Troubleshooting ====
+Linux
+
+After installing postgres you must check the correct configuration of pg_hba.conf. These two entries must be configured to use password (md5):
+
+local   all         all                               md5
+host    all         all         127.0.0.1/32          md5
+
+NOTE that some guides suggest configuring trust - but that creates a security issue on your postgres server. 

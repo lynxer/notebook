@@ -1,0 +1,110 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-06-28T12:21:19+08:00
+
+====== vi ======
+Created 星期二 28 六月 2016
+
+==== Indent multiple lines quickly in vi ====
+This answer summarises the other answers and comments of this question, and adds extra information based on the Vim documentation and the Vim wiki. For conciseness, this answer doesn't distinguish between Vi and Vim-specific commands.
+
+In the commands below, "re-indent" means "indent lines according to your indentation settings." shiftwidth is the primary variable that controls indentation.
+
+General Commands
+
+>>   Indent line by shiftwidth spaces
+<<   De-indent line by shiftwidth spaces
+5>>  Indent 5 lines
+5==  Re-indent 5 lines
+
+>%   Increase indent of a braced or bracketed block (place cursor on brace first)
+=%   Reindent a braced or bracketed block (cursor on brace)
+<%   Decrease indent of a braced or bracketed block (cursor on brace)
+]p   Paste text, aligning indentation with surroundings
+
+=i{  Re-indent the 'inner block', i.e. the contents of the block
+=a{  Re-indent 'a block', i.e. block and containing braces
+=2a{ Re-indent '2 blocks', i.e. this block and containing block
+
+>i{  Increase inner block indent
+<i{  Decrease inner block indent
+
+You can replace { with } or B, e.g. =iB is a valid block indent command. Take a look at "Indent a Code Block" for a nice example to try these commands out on.
+
+Also, remember that
+
+.    Repeat last command
+
+, so indentation commands can be easily and conveniently repeated.
+
+Re-indenting complete files
+
+Another common situation is requiring indentation to be fixed throughout a source file:
+
+gg=G  Re-indent entire buffer
+
+You can extend this idea to multiple files:
+
+" Re-indent all your c source code:
+:args *.c
+:argdo normal gg=G
+:wall
+
+Or multiple buffers:
+
+" Re-indent all open buffers:
+:bufdo normal gg=G:wall
+
+In Visual Mode
+
+Vjj> Visually mark and then indent 3 lines
+
+In insert mode
+
+These commands apply to the current line:
+
+CTRL-t   insert indent at start of line
+CTRL-d   remove indent at start of line
+0 CTRL-d remove all indentation from line
+
+Ex commands
+
+These are useful when you want to indent a specific range of lines, without moving your cursor.
+
+:< and :> Given a range, apply indentation e.g.
+:4,8>   indent lines 4 to 8, inclusive
+
+Indenting using markers
+
+Another approach is via markers:
+
+ma     Mark top of block to indent as marker 'a'
+
+...move cursor to end location
+
+>'a    Indent from marker 'a' to current location
+
+Variables that govern indentation
+
+You can set these in your .vimrc file.
+
+set expandtab       "Use softtabstop spaces instead of tab characters for indentation
+set shiftwidth=4    "Indent by 4 spaces when using >>, <<, == etc.
+set softtabstop=4   "Indent by 4 spaces when pressing <TAB>
+
+set autoindent      "Keep indentation from previous line
+set smartindent     "Automatically inserts indentation in some cases
+set cindent         "Like smartindent, but stricter and more customisable
+
+set nu
+set nonu
+
+Vim has intelligent indentation based on filetype. Try adding this to your .vimrc:
+
+if has ("autocmd")
+	" File type detection. Indent based on filetype. Recommended.
+	filetype plugin indent on
+endif
+
+==== In Vim how do I effectively insert the same characters across multiple lines? ====
+http://stackoverflow.com/questions/9549729/in-vim-how-do-i-effectively-insert-the-same-characters-across-multiple-lines

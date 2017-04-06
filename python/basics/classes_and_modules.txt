@@ -1,0 +1,67 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-06-27T16:24:40+08:00
+
+====== classes and modules ======
+Created 星期一 27 六月 2016
+
+type()
+
+== /root/trapHandle/greetings.py ==
+''' Provides random greetings '''
+import random
+
+sayings = ('Hello', 'Hi', 'Hey',  'Aloha')
+
+def greet():
+ return random.choice(sayings)
+
+# print greet()
+# print __name__
+
+if __name__ == '__main__'
+ print(greet())
+
+import sys
+sys.path.append('/root/trapHandle')
+sys.path
+import greetings
+greetings.greet()
+
+==== class initialization ====
+
+import sys, locale
+
+data = 103
+
+class Base_Model():
+	trim = 'normal'
+	engine_liters = 1.5
+
+	def __init__(self, price, transmission='automatic', color='white'):
+		self.price = price
+		self.transmission = transmission
+		self.color = color
+
+	def info(self):
+		if sys.platform.startswith('win'):
+			locale.setlocale(locale.LC_ALL, 'us')
+		else:
+			locale.setlocale(locale.LC_ALL, 'en_US.utf8')
+		print('The price of %s was %s.' % (self, locale.currency(self.price)))
+
+	def __str__(self):
+		return 'a %s base model with %s transmission' % (self.color, self.transmission)
+
+coop = Base_Model(25000)
+coop.info()
+
+coop_manual_red = Base_Model(26000, 'manual', 'red')
+coop_manual_red.info()
+
+coop_manual_green = Base_Model(color='green', transmission='manual', price=27000)
+coop_manual_green.info()
+
+==== @classmethod ====
+
+==== @staticmethod ====

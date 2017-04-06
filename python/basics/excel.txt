@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-11-23T15:06:19+08:00
+
+====== excel ======
+Created 星期三 23 十一月 2016
+
+xlrd: http://www.cnblogs.com/lhj588/archive/2012/01/06/2314181.html

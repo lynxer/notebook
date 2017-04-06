@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-07-26T14:52:45+08:00
+
+====== Nokia Proxy ======
+Created 星期二 26 七月 2016
+
+87.254.212.121 8080
+10.144.1.11 8080
+10.158.100.1 8080
+
+dns: 10.68.127.111

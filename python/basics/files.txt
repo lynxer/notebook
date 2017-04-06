@@ -1,0 +1,78 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-06-29T14:03:08+08:00
+
+====== files ======
+Created 星期三 29 六月 2016
+
+==== read ====
+with open('lists.py') as list:
+		for line in list:
+				print(line),
+
+with open('lists.py') as list:
+ text = list.read()
+print(text)
+
+with open('lists.py') as list:
+ lines=list.readlines()
+print(lines)
+
+            
+with open('lists.py') as list:
+ while 1:
+  line=list.readline()
+  if not line:
+   break
+  else:
+   print(line, end='')  
+
+try:
+	with open('lists.py', encoding='utf-16') as list:
+		text = list.read()
+	print text
+except UnicodeError:
+	print('Problem with Unicode encoding')
+
+
+==== write ====
+with open('result.log', mode='w') as result_log:
+		result_log.write('This is the first line of text.')
+		result_log.write('This is the second line of text.')
+with open('result.log', mode='r') as log:
+		print(log.read())
+
+lines = ('Line 1\n', 'Line 2\n', 'Line 3\n', 'Line 4\n')
+try:
+	out_file = open('without.txt', mode = 'w')
+	out_file.writelines(lines)
+	out_file.flush()
+finally:
+	out_file.close()
+
+try:
+	in_file = open('without.txt')
+	print(in_file.tell())
+	print(in_file.read(1))
+	print(in_file.tell())
+	print(in_file.read(6))
+	print(in_file.tell())
+	print(in_file.read(7))
+	print(in_file.tell())
+	in_file.seek(2,1)
+	print(in_file.read(5))
+	print(in_file.tell())
+finally:
+	in_file.close()
+
+
+==== reading binary data ====
+from struct import unpack
+
+with open('large.avi', mode = 'rb') as avi:
+		avi.seek(64)
+		binary = avi.read(8)
+		width_height = unpack('<hhhh', binary)
+		width = width_height[0]
+		height = width_height[2]
+		print('The video has a pixel width of %i and height of %i.' %(width, height))

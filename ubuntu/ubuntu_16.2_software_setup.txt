@@ -1,0 +1,104 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-06-14T11:12:22+08:00
+
+====== ubuntu 16.2 software setup ======
+Created 星期二 14 六月 2016
+
+==== system: ====
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt install git
+dpkg -l(list packages)/dpkg --get-selections
+tzselect
+hwclock –local –hctosys
+
+==== skype: ====
+apt install skype(-o APT::Install-Suggests="true"/--install-suggests/--install-recommends/skype --secondary &)
+
+==== java: ====
+	 export JAVA_HOME=/usr/share/jdk1.6.0_14
+	 export PATH=$JAVA_HOME/bin:$PATH
+	 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+eclipse: http://askubuntu.com/questions/761604/eclipse-not-working-in-16-04
+
+openjdk-7-jdk on ubuntu 16:
+sudo add-apt-repository ppa:openjdk-r/ppa  
+sudo apt-get update   
+sudo apt-get install openjdk-7-jdk 
+
+==== idempiere: ====
+	 http://wiki.idempiere.org/en/Installing_iDempiere
+	 sudo apt show mercurial
+	 sudo apt install mercurial
+	 hg clone https://bitbucket.org/idempiere/idempiere
+	 du -sh idempiere
+	 hg clone idempiere myexperiment
+	 cd myexperiment/
+	 hg update development(hg update release-2.1)
+	 hg pull -u
+
+
+==== postgres: ====
+apt install postgresql pgadmin3
+sudo -u postgres psql
+\password postgres
+select name, setting from pg_settings where category='File Locations';
+sudo vi /etc/postgresql/9.5/main/postgresql.conf(listen_address='*' password_encryption=on)
+确认pg_hba.conf: host all all 127.0.0.1/32 md5没有被注释
+		local all all      md5
+sudo service postgresql restart
+Mysql忘记root密码后还是需要一点手脚的，发觉postgresql基本没啥特别之处
+修改pg_hba.conf中的host all all 127.0.0.1/32 md5 为host all all 127.0.0.1/32 trust然后sudo -u postgres psql直接就进去了
+	 postgresql:
+	 sudo su - postgres
+	 psql -U postgres -c "CREATE ROLE adempiere SUPERUSER LOGIN PASSWORD 'adempiere'"
+	 logout
+
+
+==== proxy: ====
+	87.254.212.121 8080
+	add -Dorg.eclipse.ecf.provider.filetransfer.excludeContributors=org.eclipse.ecf.provider.filetransfer.httpclient4 to the end of eclipse.ini to resolve "http proxy authentication required" during installing new sorfware with http proxy
+	
+	export http_proxy=http://10.144.1.10:8080/
+	export https_proxy=https://10.144.1.10:8080/
+	export ftp_proxy=ftp://10.144.1.10:8080/
+	export socks_proxy=socks://10.144.1.10:8080/
+
+
+==== sshd server ====
+	 sudo apt-get update
+	 sudo apt-get install openssh-server
+	 sudo systemctl status ssh
+     
+	 https://help.ubuntu.com/community/SSH?action=show&redirect=SSH%2FOpenSSH
+	 tbd: key auth, forwarding
+
+
+==== vncserver ====
+	 sudo apt-get purge vino
+	https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-16-04
+	 sudo apt install xfce4 xfce4-goodies tightvncserver
+	 vncserver, to set password and generate .vnc directory
+	 vncserver :1
+	 vncserver -kill :1
+
+	 sudo apt install vnc4server
+	 vnc4passwd
+	 vnc4server
+	 sudo apt purge vnc4server; rm -rf ~/.vnc
+
+
+==== dns ====
+	[[/etc/resolv.conf]] nameserver ip
+
+
+==== install rpms ====
+	alien -d *.rpm
+	dpkg -i *.deb
+	
+
+==== jenkins ====
+	https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu
+	language setting: should set browser's display language
+	

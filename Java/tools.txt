@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-03-14T14:10:31+08:00
+
+====== tools ======
+Created 星期二 14 三月 2017
+
+===== keytool =====
+https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6/html/Administration_and_Configuration_Guide/Generate_a_SSL_Encryption_Key_and_Certificate.html

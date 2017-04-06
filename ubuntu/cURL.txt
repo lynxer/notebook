@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-06-14T11:23:47+08:00
+
+====== cURL ======
+Created 星期二 14 六月 2016
+
+http://curl.haxx.se/docs/sslcerts.html About SSL Certificate Verification
+http://www.codingpedia.org/ama/how-to-test-a-rest-api-from-command-line-with-curl/ With REST API

@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-06-21T16:38:44+08:00
+
+====== python ======
+Created 星期二 21 六月 2016
+

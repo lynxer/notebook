@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-03-21T17:22:48+08:00
+
+====== pycharm ======
+Created 星期二 21 三月 2017
+
+===== add python path =====
+
+You need to go to the Main PyCharm Preferences, which will open up a separate window. In the left pane, choose Project:... > Project Interpreter. Now, in the main pane on the right, click the settings symbol (gear symbol) next to the field for "Project Interpreter". Choose More in the menu that pops up. Now in the final step, pick the interpreter you are using for this project and click on the tree symbol at the bottom of the window (hovering over the symbol reveals it as "Show paths for the selected interpreter"). Add your path by click in the "plus" symbol.
+
+It took me ages to find, so I hope the detailed instructions will help. Further details are available in the PyCharm docs.
+
+It is good practice to have __init__.py in each subfolder of the module you are looking to add, as well as making your project folder a 'Source Root'. Simply right-click on the folder in the path bar and choose 'Mark Directory as ...'

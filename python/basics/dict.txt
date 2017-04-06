@@ -1,0 +1,50 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-06-24T16:43:26+08:00
+
+====== dict ======
+Created 星期五 24 六月 2016
+
+>>> d = {'one':1, 'two':2, 'three':3}
+>>> x = dict(four=4,five=5,**d)
+>>> d
+{'three': 3, 'two': 2, 'one': 1}
+>>> x
+{'four': 4, 'five': 5, 'three': 3, 'two': 2, 'one': 1}
+>>> 'four' in d
+False
+>>> 'four' in x
+True
+>>> for k in d: print k
+... 
+three
+two
+one
+>>> for k,v in d.items(): print(k,v)
+... 
+('three', 3)
+('two', 2)
+('one', 1)
+>>> d['three']
+3
+>>> d.get('three', 'not found')
+3
+>>> d.get('four', 'not found')
+'not found'
+>>> d.pop('three')
+3
+>>> d
+{'two': 2, 'one': 1}
+>>> del d['one']
+>>> d
+{'two': 2}
+>>> x
+{'four': 4, 'five': 5, 'three': 3, 'two': 2, 'one': 1}
+>>> x.clear()
+>>> x
+{}
+>>> del x
+>>> x
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'x' is not defined

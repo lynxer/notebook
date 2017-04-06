@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-07-26T19:06:48+08:00
+
+====== sdv ======
+Created 星期二 26 七月 2016
+
+
+ssh to MPPBE (10.9.137.108), username/password:oneac/caeno 
+10:19 
+
+dome.netact.nsn-rdnet.net       n8/8n 
+11:23 
+
+/opt/mpp/projects/onepm-adaptations/labs/CloudLab200 
+10:20 
+
+mpp action actions.rb -m generate_ip0_sdv 
+10:20 
+
+latest-log/cluster-*/ 
+
+azrod.netact.noklab.net
+Console access:
+Mppbetre(for Netact 7): 10.9.137.13
+User: adapftt/adapftt
+Azrod(for Netact 8):10.9.137.9 
+User:n8/8n
+Brigida(for OnePm):10.9.137.108 
+User:oneac/caeno
+dome ip:10.9.137.110

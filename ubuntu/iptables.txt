@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-11-24T16:46:08+08:00
+
+====== iptables ======
+Created 星期四 24 十一月 2016
+

@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-03-22T16:29:36+08:00
+
+====== CleanCode ======
+Created 星期三 22 三月 2017
+
+1. 命名
+2. 函数的抽象层级
+3. 一个函数只做一件事
+4. if while 等后只跟一行代码或一个函数, 有利于提高程序的可读性(有意思的函数命名)
+5. 注释代码直接删除, 依赖svn代码管理工具来找回
+6. log4j的使用
+7. 学习性测试的好处
+8. POJO spring的思想, 代码与架构的分离
