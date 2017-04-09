@@ -1,7 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2016-07-13T14:53:45+08:00
-
-====== plan ======
-Created 星期三 13 七月 2016
-

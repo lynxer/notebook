@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-04-09T13:23:05+08:00
+
+====== Maven ======
+Created 星期日 09 四月 2017
+包含一个项目对象模型（POM），一组标准集合，一个项目生命周期，一个依赖管理系统，和用来运行定义在生命周期阶段中插件目标的逻辑。
+
+
+约定优于配置
+
+
+https://maven.apache.org/index.html
+http://www.trinea.cn/android/maven/
