@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-04-18T18:06:03+08:00
+
+====== proxy setting ======
+Created 星期二 18 四月 2017
+
+==== windows version ====
+ 1. 直接修改.gitconfig配置文件C:\Users\andychen\.gitconfig：
+打开后添加http段落：
+	[user]  
+		email = 7777777@qq.com  
+		name = ligouden  
+	[alias]  
+		co = checkout  
+		br = branch  
+		ci = commit  
+		st = status  
+	[http]  
+		proxy = 10.45.40.148:8080  
+
+2. 命令行下面修改、
+打开gitShell:
+	C:\Users\andychen\Documents\GitHub> git config --global http.proxy 10.45.40.148:8080  
+然后查询http代理：
+	C:\Users\andychen\Documents\GitHub>> git config --get http.proxy  
+		  45.40.148:8080  
+可见命令最终修改的也是gitconfig文件。
