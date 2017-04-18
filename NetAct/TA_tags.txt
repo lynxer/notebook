@@ -29,3 +29,7 @@ rep node: /etc/opt/oss/pm/cron/omc/
 ==== websphere ====
 smanager.pl status | grep dmgr
 https://10.92.19.208:9043/admin
+
+
+==== med log ====
+/var/opt/oss/log/nokianetworks-sam_med/
