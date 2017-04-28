@@ -28,6 +28,7 @@ mvnrepository.com
 7. ...
 
 ==== maven help ====
+mvn -h
 mvn help : describe -Dplugin=eclipse
 
 

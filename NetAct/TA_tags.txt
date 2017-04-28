@@ -32,4 +32,10 @@ https://10.92.19.208:9043/admin
 
 
 ==== med log ====
-/var/opt/oss/log/nokianetworks-sam_med/
+[[/var/opt/oss/log/nokianetworks-sam_med/]]
+
+==== upgrade lab and init mediation and adaptation ====
+http://belk.netact.noklab.net/N17-2_SP_DLVY/index.jsp
+https://10.91.29.47:8080/view/Lab_tool_online/job/Lab_Installation_Upgrade/
+http://cimpp03.netact.nsn-rdnet.net/mpp/dynamic/packages/comp?component=SP987&group=netact
+

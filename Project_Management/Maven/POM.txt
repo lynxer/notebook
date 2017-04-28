@@ -5,3 +5,163 @@ Creation-Date: 2017-04-09T23:13:47+08:00
 ====== POM ======
 Created 星期日 09 四月 2017
 
+===== 一个完整的pom.xml文件，放置在项目的根目录下 =====
+http://www.cnblogs.com/adolfmc/archive/2012/07/31/2616908.html
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+					  http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- The Basics -->
+  <groupId>...</groupId>
+  <artifactId>...</artifactId>
+  <version>...</version>
+  <packaging>...</packaging>
+  <dependencies>...</dependencies>
+  <parent>...</parent>
+  <dependencyManagement>...</dependencyManagement>
+  <modules>...</modules>
+  <properties>...</properties>
+
+  <!-- Build Settings -->
+  <build>...</build>
+  <reporting>...</reporting>
+
+  <!-- More Project Information -->
+  <name>...</name>
+  <description>...</description>
+  <url>...</url>
+  <inceptionYear>...</inceptionYear>
+  <licenses>...</licenses>
+  <organization>...</organization>
+  <developers>...</developers>
+  <contributors>...</contributors>
+
+  <!-- Environment Settings -->
+  <issueManagement>...</issueManagement>
+  <ciManagement>...</ciManagement>
+  <mailingLists>...</mailingLists>
+  <scm>...</scm>
+  <prerequisites>...</prerequisites>
+  <repositories>...</repositories>
+  <pluginRepositories>...</pluginRepositories>
+  <distributionManagement>...</distributionManagement>
+  <profiles>...</profiles>
+</project>
+
+==== 基本设置协作关系 ====
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+					  http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.codehaus.mojo</groupId>
+  <artifactId>my-project</artifactId>
+  <version>1.0</version>
+  <packaging>war</packaging>
+</project>
+
+	groupId : 组织标识，例如：org.codehaus.mojo，在M2_REPO目录下，将是: org/codehaus/mojo目录。
+	artifactId : 项目名称，例如：my-project，在M2_REPO目录下，将是：org/codehaus/mojo/my-project目录。
+	version : 版本号，例如：1.0，在M2_REPO目录下，将是：org/codehaus/mojo/my-project/1.0目录。
+	packaging : 打包的格式，可以为：pom , jar , maven-plugin , ejb , war , ear , rar , par
+
+==== POM间关系 依赖关系 ====
+依赖关系列表（dependency list）是POM的重要部分。
+
+ 
+
+  <dependencies>
+	<dependency>
+	  <groupId>junit</groupId>
+	  <artifactId>junit</artifactId>
+	  <version>4.0</version>
+	  <scope>test</scope>
+	</dependency>
+	...
+  </dependencies>
+
+	groupId , artifactId , version :
+	scope : compile(default),provided,runtime,test,system
+	exclusions
+
+如何查到依赖的类库？
+一般可以通过这个网站：http://www.mvnrepository.com
+比如查询hibernate，可以找到结果列表中的hibernate类库条目。
+点击：http://www.mvnrepository.com/artifact/org.hibernate/hibernate，
+选择版本，比如3.2.6ga，即：http://www.mvnrepository.com/art ... /hibernate/3.2.6.ga
+复制文章中的：
+
+<dependency>
+	<groupId>org.hibernate</groupId>
+	<artifactId>hibernate</artifactId>
+	<version>3.2.6.ga</version>
+</dependency>
+
+到pom.xml文件中即可。
+是否还需要找到hibernate依赖的pom？
+不需要，hibernate也会有pom，maven会通过它的pom自动找到它依赖的类库。
+
+==== POM间关系 继承关系 ====
+继承其他pom.xml配置的内容。
+maven提供了一个类似java.lang.Object的顶级父pom.xml文件。
+可以通过下面命令查看当前pom.xml受到超pom.xml文件的影响：
+
+mvn help:effective-pom
+
+创建一个各种项目可复用的pom.xml文件：http://easymorse.googlecode.com/svn/trunk/pom/pom.xml
+部署要复用的pom.xml文件：
+
+mvn install
+
+在自己的pom文件中继承上述pom：
+
+		<parent>
+				<groupId>com.easymorse</groupId>
+				<artifactId>pom</artifactId>
+				<version>0.1</version>
+		</parent>
+
+==== POM间关系 聚合关系 ====
+
+用于将多个maven项目聚合为一个大的项目。
+比如目录结构如下：
+
+.
+|-- pom.xml
+|-- module-a
+	`-- pom.xml
+|-- module-b
+	`-- pom.xml
+|-- module-c
+	`-- pom.xml
+|-- foo-all
+	`-- pom.xml
+
+那么总的pom.xml文件类似：
+
+...
+	<modules>
+		<module>module-a</module>
+		<module>module-b</module>
+		<module>module-c</module>
+		<module>foo-all</module>
+	</modules>
+</project>
+
+参考文档：http://maven.apache.org/plugins/maven-eclipse-plugin/reactor.html
+
+==== 其他配置 ====
+maven的属性，是值的占位符，类似EL，类似ant的属性，比如${X}，可用于pom文件任何赋值的位置。
+有以下分类：
+	env.X：操作系统环境变量，比如${env.PATH}
+	project.x：pom文件中的属性，比如：<project><version>1.0</version></project>，引用方式：${project.version}
+	settings.x：settings.xml文件中的属性，比如：<settings><offline>false</offline></settings>，引用方式：${settings.offline}
+	Java System Properties：java.lang.System.getProperties()中的属性，比如java.home，引用方式：${java.home}
+	自定义：在pom文件中可 以：<properties><installDir>c:/apps/cargo-installs< /installDir></properties>，引用方式：${installDir}
+
+
