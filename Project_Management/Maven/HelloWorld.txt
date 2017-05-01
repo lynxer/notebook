@@ -18,7 +18,7 @@ mvn exec:java -Dexec.mainClass=package name.class name
 ==== search groupid artifactid version ====
 mvnrepository.com
 
-==== maven lifecycle ====
+==== maven default lifecycle ====
 1. Process resources
 2. compile
 3. process classes
@@ -26,6 +26,11 @@ mvnrepository.com
 5. test compile
 6. test
 7. ...
+
+==== maven lifecycle ====
+clean
+default
+site
 
 ==== maven help ====
 mvn -h
