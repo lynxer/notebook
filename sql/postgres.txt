@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-05-06T15:48:22+08:00
+
+====== postgres ======
+Created 星期六 06 五月 2017
+
+==== init ====
+apt install postgresql pgadmin3
+sudo -u postgres psql
+\password postgres
+select name, setting from pg_settings where category='File Locations';
+sudo vi /etc/postgresql/9.5/main/postgresql.conf(listen_address='*' password_encryption=on)
+确认pg_hba.conf: host all all 127.0.0.1/32 md5没有被注释
+		local all all      md5
+sudo service postgresql restart
+Mysql忘记root密码后还是需要一点手脚的，发觉postgresql基本没啥特别之处
+修改pg_hba.conf中的host all all 127.0.0.1/32 md5 为host all all 127.0.0.1/32 trust然后sudo -u postgres psql直接就进去了
+	 postgresql:
+	 sudo su - postgres
+	 psql -U postgres -c "CREATE ROLE adempiere SUPERUSER LOGIN PASSWORD 'adempiere'"
+	 logout
