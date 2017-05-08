@@ -5,3 +5,34 @@ Creation-Date: 2017-05-01T23:33:34+08:00
 ====== short key ======
 Created 星期一 01 五月 2017
 
+Settings: Ctrl Alt S
+Reformat code: Ctrl Shift F
+Navigate:
+	Back: Ctrl + <-
+	Forward: Ctrl + ->
+	Last Edit Location: Alt + <-
+	Next Edit Location: Alt + ->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+==== Live templates ====
+sout
+psvm
