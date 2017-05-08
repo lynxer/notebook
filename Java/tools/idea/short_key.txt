@@ -8,10 +8,10 @@ Created 星期一 01 五月 2017
 Settings: Ctrl Alt S
 Reformat code: Ctrl Shift F
 Navigate:
-	Back: Ctrl + <-
-	Forward: Ctrl + ->
-	Last Edit Location: Alt + <-
-	Next Edit Location: Alt + ->
+	Back: Alt + <-
+	Forward: Alt + ->
+	Last Edit Location: Ctrl + <-
+	Next Edit Location: Ctrl + ->
 
 
 
