@@ -18,7 +18,7 @@ mvn exec:java -Dexec.mainClass=package name.class name
 ==== search groupid artifactid version ====
 mvnrepository.com
 
-==== maven lifecycle ====
+==== maven default lifecycle ====
 1. Process resources
 2. compile
 3. process classes
@@ -27,10 +27,29 @@ mvnrepository.com
 6. test
 7. ...
 
+
+==== maven lifecycle ====
+clean
+default
+site
+
+==== property list ====
+1. project.*
+2. settings.*
+3. env.*
+4. java.*
+5. os.*	os.name os.arch os.version
+6. file.separator
+7. path.separator
+8. line.separator
+9. user.name user.home user.dir
+
 ==== maven help ====
 mvn -h
 mvn help : describe -Dplugin=eclipse
 
+mvn help : active-profiles
+mvn help : all-profiles
 
 1. 创建Maven的普通java项目： 
    mvn archetype:create 
