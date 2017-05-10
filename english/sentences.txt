@@ -6,3 +6,13 @@ Creation-Date: 2017-05-06T15:21:45+08:00
 Created 星期六 06 五月 2017
 
 ==== If you’re a seasoned Spring veteran, you’ll find that these new elements will become valuable additions to your Spring toolkit. ====
+
+==== Have you ever stuck around long enough after a movie to watch the credits? ====
+
+==== When it comes to expressing a bean wiring specification, Spring is incredibly flexible, offering three primary wiring mechanisms: ====
+	
+	== explicit configuration in XML ==
+	== explicit configuration in Java ==
+	== implicit bean discovery and automatic wiring ==
+
+At first glance, it may seem that offering these three configuration options complicates Spring. There is some overlap in what each configuration technique offers, and it can be overwhelming to decide which technique is most applicable for a given situation. But don’t be distressed—in many cases, the choice is largely a matter of personal taste, and you’re welcome to choose the approach that feels best for you.

@@ -12,11 +12,16 @@ Navigate:
 	Forward: Alt + ->
 	Last Edit Location: Ctrl + <-
 	Next Edit Location: Ctrl + ->
+	
+	previous highlighted error: shift + f1
+	quick fix: Alt + Enter
+	
+	rename: Alt + Shift + R
 
 
 
 
-
+http://blog.csdn.net/zmken497300/article/details/55251697
 
 
 

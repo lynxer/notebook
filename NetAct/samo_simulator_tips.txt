@@ -55,4 +55,9 @@ SAM medeation log目录
 cd [[/var/opt/oss/log/nokianetworks-sam_med]]
 
 修改client id
-/etc/opt/oss/global/nokianetworks-sam_med/conf/mediation-sam.properties
+[[/etc/opt/oss/global/nokianetworks-sam_med/conf/mediation-sam.properties]]
+
+
+Import SAM certification by running the scripts on node where the mediation is running: /opt/oss/nokianetworks-sam_med/bin/certmgmt.sh <IP/FQDN of the simulator> <HTTPs port of the simualtor>
+If the case has been run before on this NetAct, run opt/oss/nokianetworks-sam_med/bin/certmgmt.sh rm <IP/FQDN of the simulator> to remove the imported certificate first
+
