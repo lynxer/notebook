@@ -16,3 +16,7 @@ Created 星期六 06 五月 2017
 	== implicit bean discovery and automatic wiring ==
 
 At first glance, it may seem that offering these three configuration options complicates Spring. There is some overlap in what each configuration technique offers, and it can be overwhelming to decide which technique is most applicable for a given situation. But don’t be distressed—in many cases, the choice is largely a matter of personal taste, and you’re welcome to choose the approach that feels best for you.
+
+==== Fortunately, none of the configuration options available in Spring are mutually exclusive. ====
+
+==== Spring has several other tricks up its sleeve for more advanced bean wiring. ====
