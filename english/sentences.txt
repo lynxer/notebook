@@ -20,3 +20,11 @@ At first glance, it may seem that offering these three configuration options com
 ==== Fortunately, none of the configuration options available in Spring are mutually exclusive. ====
 
 ==== Spring has several other tricks up its sleeve for more advanced bean wiring. ====
+
+==== That’s because every home has a meter that measures every kilowatt, and once a month someone comes by to read that meter so that the electric company knows how much to bill us. ====
+
+==== Monitoring electricity consumption is an important function, but it isn’t foremost in most homeowners’ minds. Mowing the lawn, vacuuming the carpet, and cleaning the bathroom are the kinds of things that homeowners are actively involved in. ====
+
+==== Advice defines both the what and the when of an aspect. In addition to describing the job that an aspect will perform, advice addresses the question of when to perform the job. ====
+
+==== The term classic usually carries a good connotation. ====
