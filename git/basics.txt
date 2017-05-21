@@ -10,6 +10,7 @@ git fetch是指更新本地的远程分支
 
 repo sync实际是执行了两个操作，先git fetch，再基于最新base checkout出代码，也就更新了本地分支。
 一般情况下，我们是建议研发直接repo sync 。不过，实际研发会碰到什么问题，比如因为woring tree不干净导致同步失败一类的，就不是特别清楚了。还是要具体情况具体分析。
+git sync repo
 
 
 
