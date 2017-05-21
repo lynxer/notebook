@@ -5,4 +5,18 @@ Creation-Date: 2017-04-06T13:27:54+08:00
 ====== tools ======
 Created 星期四 06 四月 2017
 
-open system architect
+==== open system architect ====
+sudo apt update
+sudo apt search unixodbc
+sudo apt install unixodbc-postgresql unixodbc-bin unixodbc
+sudo apt autoremove
+
+
+sudo apt install libstdc++5
+
+Please visit the following sites for information on how to
+install, execute, use, and contribute to the improvement of
+this application.
+
+http://www.codebydesign.com
+http://sourceforge.net/projects/systemarchitect
