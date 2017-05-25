@@ -39,3 +39,6 @@ http://belk.netact.noklab.net/N17-2_SP_DLVY/index.jsp
 https://10.91.29.47:8080/view/Lab_tool_online/job/Lab_Installation_Upgrade/
 http://cimpp03.netact.nsn-rdnet.net/mpp/dynamic/packages/comp?component=SP987&group=netact
 
+
+sudo -u sammed [[/opt/oss/nokianetworks-sam_med/bin/certmgmt.sh]] ip port
+
