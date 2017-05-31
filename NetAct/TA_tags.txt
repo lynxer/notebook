@@ -42,3 +42,10 @@ http://cimpp03.netact.nsn-rdnet.net/mpp/dynamic/packages/comp?component=SP987&gr
 
 sudo -u sammed [[/opt/oss/nokianetworks-sam_med/bin/certmgmt.sh]] ip port
 
+
+
+/etc/opt/oss/global/nokianetworks-sam_med/conf/mediation-sam.properties 
+
+sam.ssl.hostverify=false 
+
+
