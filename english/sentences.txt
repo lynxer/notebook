@@ -28,3 +28,5 @@ At first glance, it may seem that offering these three configuration options com
 ==== Advice defines both the what and the when of an aspect. In addition to describing the job that an aspect will perform, advice addresses the question of when to perform the job. ====
 
 ==== The term classic usually carries a good connotation. ====
+
+==== Imagine for a moment that you’re stranded on a deserted island. This may sound like a dream come true. After all, who wouldn’t want some solitude on a beach, blissfully ignorant of the goings-on of the outside world? ====

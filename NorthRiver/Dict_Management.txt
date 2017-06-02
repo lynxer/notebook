@@ -5,4 +5,7 @@ Creation-Date: 2017-04-05T17:52:00+08:00
 ====== Dict Management ======
 Created 星期三 05 四月 2017
 
-http://blog.csdn.net/stevene/article/details/575142
+DB: http://blog.csdn.net/stevene/article/details/575142
+http://blog.csdn.net/happy_wu/article/details/52673814
+
+XML: http://blog.csdn.net/wklken/article/details/6402557

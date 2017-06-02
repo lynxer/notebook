@@ -28,7 +28,7 @@ Azrod(for Netact 8):10.9.137.9
 User:n8/8n
 Brigida(for OnePm):10.9.137.108 
 User:oneac/caeno
-dome [[ip:10.9.137.110]]
+dome ip:10.9.137.110
 
 ==== mpp ====
 https://confluence.int.net.nokia.com/display/NCEPdev/Labs+for+EPC+Integration
