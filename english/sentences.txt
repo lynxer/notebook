@@ -30,3 +30,5 @@ At first glance, it may seem that offering these three configuration options com
 ==== The term classic usually carries a good connotation. ====
 
 ==== Imagine for a moment that you’re stranded on a deserted island. This may sound like a dream come true. After all, who wouldn’t want some solitude on a beach, blissfully ignorant of the goings-on of the outside world? ====
+
+==== There’s an old joke about a skydiver who’s blown off course and ends up landing in a tree, dangling above the ground. After a while, someone walks by, and the skydiver asks where he is. The passerby answers, “You’re about 20 feet off the ground.” The skydiver replies, “You must be a software analyst.” “You’re right. How did you know?” asks the passerby. “Because what you told me was 100% accurate but completely worthless.” ====
