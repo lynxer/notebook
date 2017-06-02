@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-06-22T16:34:36+08:00
+
+====== links ======
+Created 星期三 22 六月 2016
+http://www.it165.net/pro/html/201412/29305.html    plugin develop and deploy
+http://www.vogella.com/tutorials/EclipseTargetPlatform/article.html	target platform
+http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.pde.doc.user%2Fguide%2Ftools%2Flaunchers%2Feclipse_application_launcher.htm	eclipse application launcher
+http://wiki.idempiere.org/en/Category:Plug-In_Development	start to develop idempiere
+http://globalqss.com/idempiere/1.0c/schemaspy/	idempiere db

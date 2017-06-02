@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-06-02T16:17:29+08:00
+
+====== plan ======
+Created 星期五 02 六月 2017
+
+1. Spring competence build(4h)
+2. Java competence build(4h)
+3. Be familiar with plum(4h)
+4. Dict management(4h)
+5. tables(4h)

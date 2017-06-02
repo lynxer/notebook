@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-06-02T11:54:53+08:00
+
+====== about documents ======
+Created 星期五 02 六月 2017
+
+Here I list the documents delivered by Cudo. I think this can help R&D know how many documents are needed to deliver to customer by Cudo.
+	Integration document
+	Mediation document(SAM mediation)
+	Troubleshooting document(troubleshooting SAM mediation)
+	Release change
+	OIB documents
