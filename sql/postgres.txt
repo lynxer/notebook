@@ -47,3 +47,19 @@ local   all         all                               md5
 host    all         all         127.0.0.1/32          md5
 
 NOTE that some guides suggest configuring trust - but that creates a security issue on your postgres server. 
+
+==== db ====
+连接相关：
+psql testdb，系统登录用户，本地数据库，连接testdb数据库
+psql -U testuser testdb，用户testuser，连接本地数据库testdb；
+psql -U testuser -h 172.28.18.51 testdb，用户testuser，连接远程testdb数据库；
+列举数据库：/l
+选择数据库：/c  数据库名
+显示表结构信息：/d 表名
+退出psgl：/q
+显示字符集：/encoding
+createdb ...
+create database testdb;
+
+==== table ====
+

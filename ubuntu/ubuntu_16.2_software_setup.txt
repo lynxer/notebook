@@ -13,6 +13,9 @@ dpkg -l(list packages)/dpkg --get-selections
 tzselect
 hwclock –local –hctosys
 
+install aptitude via apt sudo apt-get install aptitude
+sudo aptitude install pgadmin3
+
 ==== skype: ====
 apt install skype(-o APT::Install-Suggests="true"/--install-suggests/--install-recommends/skype --secondary &)
 

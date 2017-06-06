@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-06-07T00:37:05+08:00
+
+====== wxwidgets ======
+Created 星期三 07 六月 2017
+
+3. sudo apt-add-repository 'deb http://repos.codelite.org/wx3.0.3/ubuntu/ xenial universe'
+4. sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6856E1DB1AC82609
+5. sudo apt update
+apt-get install libwxbase3.0-0-unofficial \
+				 libwxbase3.0-dev \
+				 libwxgtk3.0-0-unofficial \
+				 libwxgtk3.0-dev \
+				 wx3.0-headers \
+				 wx-common \
+				 libwxbase3.0-dbg \
+				 libwxgtk3.0-dbg \
+				 wx3.0-i18n \
+				 wx3.0-examples \
+				 wx3.0-doc
