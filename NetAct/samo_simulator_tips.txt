@@ -8,6 +8,9 @@ Created 星期三 16 十一月 2016
 ==== simulator package ====
 http://10.9.137.108/mpp/static/packages/ines/samo-sim/
 
+==== simulator wiki ====
+https://confluence.int.net.nokia.com/display/NCEP/SAM-O+Simulator+Introduction
+
 好像是 redhat 版本的问题。 
 那你用这两个命令来启动 
 
