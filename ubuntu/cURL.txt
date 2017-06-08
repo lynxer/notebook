@@ -7,3 +7,4 @@ Created 星期二 14 六月 2016
 
 http://curl.haxx.se/docs/sslcerts.html About SSL Certificate Verification
 http://www.codingpedia.org/ama/how-to-test-a-rest-api-from-command-line-with-curl/ With REST API
+https://www.akadia.com/services/ssh_test_certificate.html	create self signed cert
