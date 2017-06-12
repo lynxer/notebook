@@ -1,0 +1,202 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-06-09T14:35:13+08:00
+
+====== Date ======
+Created 星期五 09 六月 2017
+
+一、Date类型的初始化
+
+1、 
+Date(int year, int month, int date); 
+直接写入年份是得不到正确的结果的。 
+因为java中Date是从1900年开始算的，所以前面的第一个参数只要填入从1900年后过了多少年就是你想要得到的年份。 
+月需要减1，日可以直接插入。 
+这种方法用的比较少，常用的是第二种方法。 
+2、 
+这种方法是将一个符合特定格式，比如yyyy-MM-dd,的字符串转化成为Date类型的数据。 
+首先，定义一个Date类型的对象 
+Date date = null; 
+再定义一个String类型的符合格式的字符串 
+String dateStr = "2010-9-10"; 
+把这个字符串进行拆分 
+String[ ]  dateDivide = dateStr.split("-"); 
+把年月日分别取出，赋给Calendar，用 Calendar的getTime();取得日期再赋给date。
+
+例如：
+
+if(dateDivide.length==3){  
+　　 int year = Integer.parseInt(dateDivide [0].trim());//去掉空格  
+		int month = Integer.parseInt(dateDivide [1].trim());  
+		int day = Integer.parseInt(dateDivide [2].trim());  
+		Calendar c = Calendar.getInstance();//获取一个日历实例  
+		c.set(year, month-1, day);//设定日历的日期  
+		date = c.getTime();  
+}  
+二、Date类型的比较
+
+Date a;
+Date b;
+假设现在你已经实例化了a和b
+a.after(b)返回一个boolean，如果a的时间在b之后（不包括等于）返回true
+
+b.before(a)返回一个boolean，如果b的时间在a之前（不包括等于）返回true
+
+a.equals(b)返回一个boolean,如果a的时间和b相等返回true
+三、Date类型常用的操作函数
+
+1.计算某一月份的最大天数 
+Calendar time=Calendar.getInstance(); 
+time.clear(); time.set(Calendar.YEAR,year); //year 为 int time.set(Calendar.MONTH,i-1);//注意,Calendar对象默认一月为0 int day=time.getActualMaximum(Calendar.DAY_OF_MONTH);//本月份的天数 注：在使用set方法之前，必须先clear一下，否则很多信息会继承自系统当前时间 2.Calendar和Date的转化 (1) Calendar转化为Date Calendar cal=Calendar.getInstance(); Date date=cal.getTime();(2) Date转化为Calendar Date date=new Date(); Calendar cal=Calendar.getInstance(); cal.setTime(date); 3.格式化输出日期时间 （这个用的比较多）Date date=new Date(); SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"); String time=df.format(date); System.out.println(time); 4.计算一年中的第几星期(1)计算某一天是一年中的第几星期Calendar cal=Calendar.getInstance(); cal.set(Calendar.YEAR, 2006); cal.set(Calendar.MONTH, 8); cal.set(Calendar.DAY_OF_MONTH, 3);int weekno=cal.get(Calendar.WEEK_OF_YEAR);(2)计算一年中的第几星期是几号 SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd");Calendar cal=Calendar.getInstance(); cal.set(Calendar.YEAR, 2006);cal.set(Calendar.WEEK_OF_YEAR, 1); cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY); System.out.println(df.format(cal.getTime()));输出:2006-01-02 5.add()和roll()的用法(不太常用) (1)add()方法SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd");Calendar cal=Calendar.getInstance(); cal.set(Calendar.YEAR, 2006);cal.set(Calendar.MONTH, 8);cal.set(Calendar.DAY_OF_MONTH, 3); cal.add(Calendar.DATE, -4); Date date=cal.getTime(); System.out.println(df.format(date)); cal.add(Calendar.DATE, 4); date=cal.getTime(); System.out.println(df.format(date));输出：    2006-08-30     2006-09-03(2)roll方法 cal.set(Calendar.YEAR, 2006); cal.set(Calendar.MONTH, 8);cal.set(Calendar.DAY_OF_MONTH, 3);cal.roll(Calendar.DATE, -4); date=cal.getTime(); System.out.println(df.format(date)); cal.roll(Calendar.DATE, 4);date=cal.getTime(); System.out.println(df.format(date));输出：   2006-09-292006-09-03 可见，roll()方法在本月内循环，一般使用add()方法；
+
+6.计算两个任意时间中间的间隔天数（这个比较常用）
+(1)传进Calendar对象    public int getIntervalDays(Calendar startday,Calendar endday)...{      if(startday.after(endday))...{     Calendar cal=startday;     startday=endday;        endday=cal;         }         long sl=startday.getTimeInMillis();     long el=endday.getTimeInMillis();      long ei=el-sl;        return (int)(ei/(1000*60*60*24));     } 
+
+(2)传进Date对象 
+
+
+	public int getIntervalDays(Date startday,Date endday)...{        
+		if(startday.after(endday))...{ 
+			Date cal=startday; 
+			startday=endday; 
+			endday=cal; 
+		}        
+		long sl=startday.getTime(); 
+		long el=endday.getTime();       
+		long ei=el-sl;           
+		return (int)(ei/(1000*60*60*24)); 
+	} 
+(3)改进精确计算相隔天数的方法 
+	public int getDaysBetween (Calendar d1, Calendar d2) ...{ 
+		if (d1.after(d2)) ...{ 
+			java.util.Calendar swap = d1; 
+			d1 = d2; 
+			d2 = swap; 
+		} 
+		int days = d2.get(Calendar.DAY_OF_YEAR) - d1.get(Calendar.DAY_OF_YEAR); 
+		int y2 = d2.get(Calendar.YEAR); 
+		if (d1.get(Calendar.YEAR) != y2) ...{ 
+			d1 = (Calendar) d1.clone(); 
+			do ...{ 
+				days += d1.getActualMaximum(Calendar.DAY_OF_YEAR);//得到当年的实际天数 
+				d1.add(Calendar.YEAR, 1); 
+			} while (d1.get(Calendar.YEAR) != y2); 
+		} 
+		return days; 
+	} 
+注意：通过上面的方法可以衍生出求任何时间，如要查出邮箱三周之内收到的邮件（得到当前系统时间－再得到三周前时间）用收件的时间去匹配 最好装化成 long去比较 
+如：1年前日期（注意毫秒的转换） 
+   java.util.Date myDate=new java.util.Date(); 
+   long myTime=(myDate.getTime()/1000)-60*60*24*365; 
+   myDate.setTime(myTime*1000); 
+   String mDate=formatter.format(myDate); 
+
+
+7. String 和 Date ，Long 之间相互转换 （最常用） 
+
+
+字符串转化成时间类型（字符串可以是任意类型，只要和SimpleDateFormat中的格式一致即可） 
+通常我们取时间跨度的时候，会substring出具体时间－－long－比较 
+
+
+java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("M/dd/yyyy hh:mm:ss a",java.util.Locale.US);
+java.util.Date d = sdf.parse("5/13/2003 10:31:37 AM"); 
+long dvalue=d.getTime(); 
+SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
+String mDateTime1=formatter.format(d); 
+
+
+8. 通过时间求时间 
+
+
+年月周求日期 
+SimpleDateFormat formatter2 = new SimpleDateFormat("yyyy-MM F E"); 
+java.util.Date date2= formatter2.parse("2003-05 5 星期五"); 
+SimpleDateFormat formatter3 = new SimpleDateFormat("yyyy-MM-dd"); 
+String mydate2=formatter3.format(date2); 
+
+
+求是星期几 
+mydate= myFormatter.parse("2001-1-1"); 
+SimpleDateFormat formatter4 = new SimpleDateFormat("E"); 
+String mydate3=formatter4.format(mydate); 
+
+
+9. java 和 具体的数据库结合 
+
+
+在开发web应用中，针对不同的数据库日期类型，我们需要在我们的程序中对日期类型做各种不同的转换。若对应数据库数据是oracle的Date类型，即只需要年月日的，可以选择使用java.sql.Date类型，若对应的是MSsqlserver 数据库的DateTime类型，即需要年月日时分秒的，选择java.sql.Timestamp类型 
+你可以使用dateFormat定义时间日期的格式，转一个字符串即可 
+
+
+class Datetest{ 
+*method 将字符串类型的日期转换为一个timestamp（时间戳记java.sql.Timestamp） 
+*@param dateString 需要转换为timestamp的字符串 
+*@return dataTime timestamp 
+
+
+public final static java.sql.Timestamp string2Time(String dateString) 
+throws java.text.ParseException { 
+DateFormat dateFormat; 
+dateFormat = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss.SSS", Locale.ENGLISH);//设定格式 
+//dateFormat = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss", Locale.ENGLISH); 
+dateFormat.setLenient(false); 
+java.util.Date timeDate = dateFormat.parse(dateString);//util类型 
+java.sql.Timestamp dateTime = new java.sql.Timestamp(timeDate.getTime());//Timestamp类型,timeDate.getTime()返回一个long型 
+return dateTime; 
+} 
+
+
+*method 将字符串类型的日期转换为一个Date（java.sql.Date） 
+*@param dateString 需要转换为Date的字符串 
+*@return dataTime Date 
+
+
+public final static java.sql.Date string2Date(String dateString) 
+throws java.lang.Exception { 
+DateFormat dateFormat; 
+dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH); 
+dateFormat.setLenient(false); 
+java.util.Date timeDate = dateFormat.parse(dateString);//util类型 
+java.sql.Date dateTime = new java.sql.Date(timeDate.getTime());//sql类型 
+return dateTime; 
+} 
+
+
+public static void main(String[] args){ 
+Date da = new Date(); 
+注意：这个地方da.getTime()得到的是一个long型的值 
+System.out.println(da.getTime()); 
+
+
+由日期date转换为timestamp 
+
+
+第一种方法：使用new Timestamp(long) 
+Timestamp t = new Timestamp(new Date().getTime()); 
+System.out.println(t); 
+
+
+第二种方法：使用Timestamp(int year,int month,int date,int hour,int minute,int second,int nano) 
+Timestamp tt = new Timestamp(Calendar.getInstance().get( 
+	  Calendar.YEAR) - 1900, Calendar.getInstance().get( 
+	  Calendar.MONTH), Calendar.getInstance().get( 
+	  Calendar.DATE), Calendar.getInstance().get( 
+	  Calendar.HOUR), Calendar.getInstance().get( 
+	  Calendar.MINUTE), Calendar.getInstance().get( 
+	  Calendar.SECOND), 0); 
+System.out.println(tt); 
+
+
+try { 
+String sToDate = "2005-8-18";//用于转换成java.sql.Date的字符串 
+	  String sToTimestamp = "2005-8-18 14:21:12.123";//用于转换成java.sql.Timestamp的字符串 
+	  Date date1 = string2Date(sToDate); 
+	  Timestamp date2 = string2Time(sToTimestamp); 
+System.out.println("Date:"+date1.toString());//结果显示 
+System.out.println("Timestamp:"+date2.toString());//结果显示 
+}catch(Exception e) { 
+e.printStackTrace(); 
+} 
+} 
+}
