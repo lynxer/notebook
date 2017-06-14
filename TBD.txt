@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-06-06T22:51:32+08:00
+
+====== TBD ======
+Created 星期二 06 六月 2017
+
+1. systemctl
+2. python-pip	pip install -r requirements.txt
+3. web crawler
