@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-08-30T15:56:59+08:00
+
+====== links ======
+Created Wednesday 30 August 2017
+
+Home page: https://www.nuance.com/
+
+personal page: https://nuance.jiveon.com/community/employee-resources/human-resources
+
+IT service desk contact:  itservicedesk@nuance.com  http://ServiceDesk.nuance.com
+
+Learning:  http://techbus.safaribooksonline.com
+		https://learning.nuance.com
+		
+
+NCS training docs: https://nuance.jiveon.com/docs/DOC-95726
+
+Talent management: https://successfactors.nuance.com/
+
+jobs: https://jobs.nuance.com/
+
+reimbursement: https://thevoice.nuance.com/welcome 
