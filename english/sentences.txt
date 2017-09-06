@@ -5,6 +5,8 @@ Creation-Date: 2017-05-06T15:21:45+08:00
 ====== sentences ======
 Created 星期六 06 五月 2017
 
+====== spring action ======
+
 ==== If you’re a seasoned Spring veteran, you’ll find that these new elements will become valuable additions to your Spring toolkit. ====
 
 ==== Have you ever stuck around long enough after a movie to watch the credits? ====
@@ -32,3 +34,9 @@ At first glance, it may seem that offering these three configuration options com
 ==== Imagine for a moment that you’re stranded on a deserted island. This may sound like a dream come true. After all, who wouldn’t want some solitude on a beach, blissfully ignorant of the goings-on of the outside world? ====
 
 ==== There’s an old joke about a skydiver who’s blown off course and ends up landing in a tree, dangling above the ground. After a while, someone walks by, and the skydiver asks where he is. The passerby answers, “You’re about 20 feet off the ground.” The skydiver replies, “You must be a software analyst.” “You’re right. How did you know?” asks the passerby. “Because what you told me was 100% accurate but completely worthless.” ====
+
+
+====== docker guides ======
+The application itself is very simple so that you are not too distracted by what the code is doing. After all, the value of Docker is in how it can build, ship, and run applications; it’s totally agnostic as to what your application actually does.
+
+Docker offers three different ways to mount data into a container from the Docker host: volumes, bind mounts, or tmpfs volumes. When in doubt, volumes are almost always the right choice.

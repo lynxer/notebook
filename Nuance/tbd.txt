@@ -5,4 +5,19 @@ Creation-Date: 2017-08-30T17:31:04+08:00
 ====== tbd ======
 Created Wednesday 30 August 2017
 
-can't login to learning websites with account
+
+
+
+
+
+
+
+
+
+
+
+==== competence build ====
+
+docker: https://docs.docker.com/get-started/[--%20--%20-.%20..%20..%20..%20..%20..%20..%20..%20..]
+spring: spring action 4th
+java advanced: 
