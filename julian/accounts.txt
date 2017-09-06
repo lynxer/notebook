@@ -14,3 +14,4 @@ GreenVPN:	crystal991015/CRYSTAL1015TING
 jiafu:		id61/lynx1211
 year:		xjbt/lynx1211
 docker:		lynxer/183630763@qq.com/clcn1211
+duolg:		183630763@qq.com/clcn1211
