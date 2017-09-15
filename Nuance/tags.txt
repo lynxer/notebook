@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-09-15T09:57:54+08:00
+
+====== tags ======
+Created Friday 15 September 2017
+
+ip address: 10.71.2.161
+subnet mask: 255.0.0.0
+default gateway: 10.71.2.1
+dns: 61.139.2.69
+8.8.8.8

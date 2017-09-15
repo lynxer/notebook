@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-09-15T10:57:32+08:00
+
+====== phrases ======
+Created Friday 15 September 2017
+
+The match was delayed for half an hour due to heavy rain.
+因下大雨，比赛延迟了半个小时。 这里用 “delay”是因为下雨是不可控因素。
+The meeting has been postponed until next Tuesday.
+会议时间推迟到下周二。会议被提前取消，然后延期到下一个预定时间。
+My daughter kept putting off her homework until she got a warning from school.
+我女儿一直拖拉不肯做作业，直到她收到学校发的警告。这里选用“putting off”是因为这是更口语化的表达，在日常生活中常用。
