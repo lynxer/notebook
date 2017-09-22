@@ -1,0 +1,49 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-09-18T16:37:10+08:00
+
+====== access svn https auth ======
+Created Monday 18 September 2017
+
+import urllib2, base64, ssl
+
+username = 'bamboo'
+password = 'bamboo'
+target_url = "https://mobi-svn01.nuance.com"
+url = "https://www.google.com"
+realm = "Subversion Repositories"
+
+
+# to solve problem that ignore credential check
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
+# both ways could not add "Authorization:" to the header of request
+# auth = urllib2.HTTPBasicAuthHandler()
+# auth.add_password(realm, target_url, username, password)
+# opener = urllib2.build_opener(auth, urllib2.CacheFTPHandler)
+# urllib2.install_opener(opener)
+
+# passman = urllib2.HTTPPasswordMgrWithDefaultRealm()
+# passman.add_password(None, target_url, username, password)
+# authhandler = urllib2.HTTPBasicAuthHandler(passman)
+# opener = urllib2.build_opener(authhandler)
+# urllib2.install_opener(opener)
+
+req = urllib2.Request(target_url)
+base64str = base64.encodestring('%s:%s' % (username, password)).replace('\n', '')
+req.add_header("Authorization", "Basic %s" % base64str)
+
+
+try:
+	resp = urllib2.urlopen(req, context=ctx)
+	print resp
+except urllib2.HTTPError, e:
+	mesg = str(e).split(" ")
+	errCode = mesg[2].rstrip(":")
+	print "+++++++++++"
+	print errCode
+except urllib2.URLError, e:
+	print "++++++++++++++++++++++++++++++++++"
+	print str(e)

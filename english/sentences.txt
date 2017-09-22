@@ -40,3 +40,8 @@ At first glance, it may seem that offering these three configuration options com
 The application itself is very simple so that you are not too distracted by what the code is doing. After all, the value of Docker is in how it can build, ship, and run applications; it’s totally agnostic as to what your application actually does.
 
 Docker offers three different ways to mount data into a container from the Docker host: volumes, bind mounts, or tmpfs volumes. When in doubt, volumes are almost always the right choice.
+
+
+====== other ======
+
+According to the RHS Dictionary of Gardening, there are approximately 1,000 species of bamboos.

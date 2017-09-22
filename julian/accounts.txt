@@ -12,8 +12,9 @@ dota2:	netact1/cc
 YY:		13****62/cc
 GreenVPN:	crystal991015/CRYSTAL1015TING
 jiafu:		id61/lx
-365:		xjbt/lx
+365:		xjbt7/lx
 docker:		lynxer/18****63@qq.com/cc
 duolg:		18****63@qq.com/cc
 oracle:		90****96[[@qq.com]]/Cc
 outlook:		ju*an.c.*g@outlook.com/lx
+bamboo:	a*_*g/J*12
