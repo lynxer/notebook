@@ -13,7 +13,7 @@ Navigate:
 	Last Edit Location: Ctrl + <-
 	Next Edit Location: Ctrl + ->
 	
-	previous highlighted error: shift + f1
+	previous highlighted error: shift + f2
 	quick fix: Alt + Enter
 	
 	rename: Alt + Shift + R

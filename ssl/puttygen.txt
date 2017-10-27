@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-09-26T09:41:38+08:00
+
+====== puttygen ======
+Created Tuesday 26 September 2017
+
+==== create private key and public key ====

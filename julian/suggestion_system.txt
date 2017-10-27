@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-10-24T18:35:54+08:00
+
+====== suggestion system ======
+Created Tuesday 24 October 2017
+
+jc001
+英超
+德甲
+法甲
+西甲
+瑞典超
+挪超
+墨西联
+巴甲
+阿甲
+中超
+韩K联
+日职
+日乙
+荷甲
