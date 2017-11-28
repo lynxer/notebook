@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-11-09T17:53:19+08:00
+
+====== k8s ======
+Created Thursday 09 November 2017
+
+kubectl get ns
+kubectl -n ntg6-wangan-core get pod
+kubectl -n ntg6-wangan-core get all
+kubectl -n ntg6-wangan-core exec -it mzkrc-hsh-0588bd338e76d86db614b631b977a002-kbd5g bash

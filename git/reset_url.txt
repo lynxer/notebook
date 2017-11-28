@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-11-13T14:36:50+08:00
+
+====== reset url ======
+Created Monday 13 November 2017
+
+git remote set-url origin https://git.labs.nuance.com/mobility-ncs-sspni-tools/k8s-deployment-tools.git

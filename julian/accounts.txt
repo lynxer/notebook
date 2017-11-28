@@ -20,3 +20,8 @@ outlook:		ju*an.c.*g@outlook.com/lx
 bamboo:	a*_*g/J*12
 zhongzhi:	15**36/cc
 aicai:		15**6/Cc77
+https://payroll.ciicfc.com/hrms/userlogon.do	a*g@n*ce*m/cc
+amn:		ij***11@gm*m/Cc
+artifactory:	admin/password
+kingciba:	15**36/cc
+c**n:		9**@q*m/Cc

@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-11-03T16:51:58+08:00
+
+====== svn checkout export ======
+Created Friday 03 November 2017
+
+check out跟check in对应，export跟import对应。
+check out导出获得文件后，导出的文件仍处于SVN版本控制中，与版本库保持关联，比如你可以进行Svn Update或者Svn Commit操作。同时导出文件夹下有一个.svn的隐藏文件夹，存储着一些版本的元数据信息。
+
+export 简单导出一个版本的数据，导出的文件脱离SVN版本控制，修改后无进行Update和Commit操作。导出文件夹下没有.svn目录。

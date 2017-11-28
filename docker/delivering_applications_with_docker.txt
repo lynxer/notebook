@@ -1,0 +1,50 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-11-17T19:26:34+08:00
+
+====== delivering applications with docker ======
+Created Friday 17 November 2017
+
+hardware [-> hypervisor ]-> os -> container engine(libvirt, lxc, etc..)
+
+{{~\Pictures\docker.PNG}}
+{{~\Pictures\docker-machine.PNG}}
+
+{{~\Pictures\docker-swarm.PNG}}
+
+{{~\Pictures\docker-compose.PNG}}
+docker run -P(expose all ports in app to random host ports) --link redis --name web -d rickfasst/oreilly-simple-web-app
+docker port web
+docker logs -f(follow) containiername
+--restart unless-stopped			restart policy
+
+docker run -d -p 6379:6379 --name redis redis
+docker logs redis
+docker inspect --format='{{.NetworkSettings.IPAdress}}' redis
+docker exec -i -t redis [[/bin/bash]]
+
+
+tbd: redis --link main process -e | rabbitmq | nodejs
+
+
+
+//docker commit
+docker run -it alpine [[/bin/sh]]
+apk update
+apt add nodejs
+node --version
+hostname
+exit
+docker commit -m " installl node" id
+docker run new_id node --version
+
+//docker build
+FROM alpine
+MAINTAINER lynxer <gg@gg.com>
+RUN apk update && apk add nodejs
+RUN mkdir average
+ADD average.js average/
+WORKDIR average
+ENTRYPOINT ["node","average.js"] [CMD []]
+docker build -t gg/average .
+
