@@ -9,3 +9,6 @@ kubectl get ns
 kubectl -n ntg6-wangan-core get pod
 kubectl -n ntg6-wangan-core get all
 kubectl -n ntg6-wangan-core exec -it mzkrc-hsh-0588bd338e76d86db614b631b977a002-kbd5g bash
+
+kubectl --context m10 get ns
+

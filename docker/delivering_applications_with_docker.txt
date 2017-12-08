@@ -48,3 +48,15 @@ WORKDIR average
 ENTRYPOINT ["node","average.js"] [CMD []]
 docker build -t gg/average .
 
+
+
+
+
+===== network =====
+
+
+
+
+
+
+
