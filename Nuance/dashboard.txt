@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-12-26T16:37:12+08:00
+
+====== dashboard ======
+Created Tuesday 26 December 2017
+
+最近大家在工作中逐渐需要了解到dashboard，这里分享一下dashboard的address.
+
+Grafana: 显示metrics的dashboard
+Kibana:  显示log and alarm
+
+Grafana帐号密码： admin/admin
+Kibana帐号密码： ntg6/letmein
+
+MTL Lab
+Grafana http://10.3.65.233:3000
+Kibana https://10.3.65.234:5601/app/kibana
+               
+MTL DMZ
+Kibana https://10.56.10.141:8080/app/kibana
+Grafana http://mt-dmz-gw002.nuance.com:3000
+
+Azure
+Kibana    https://10.0.5.5:5601/app/kibana
+Grafana  http://10.0.3.6:3000 
+
+其中只有Azure上的需要有jumpbox权限，配合SSH proxy才能访问 (参照攻略：https://nuance.jiveon.com/docs/DOC-153853)
+
+上几周这些地址都能用的，今天我肉测了哈， DMZ和Azure上 Grafana暂时不可用，但MTL Lab还可用。 所有Kibana地址都可用。
+
+没找到什么文档介绍怎么用，特别Kibana功能比较强大， 欢迎大家多使用，然后交流经验。

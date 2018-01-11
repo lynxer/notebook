@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-12-26T16:36:29+08:00
+
+====== jgitflow ======
+Created Tuesday 26 December 2017
+
+mvn jgitflow : feature-start  的时候，会根据你的jira名字修改pom里面的version，这样deploy到maven repo里面的版本，只会影响你自己。你在修改gateway的时候也可以取到正确的lib版本
+mvn jgitflow : feature-finish 的时候，会自动把pom里面的version 修改为develop分支上的version，并且merge到develop分支

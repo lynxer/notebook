@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-01-11T19:16:39+08:00
+
+====== eclipse ======
+Created Thursday 11 January 2018
+今天用eclipse，当打算run一个带有main函数的class时，出现editor does not contain a main type的错误框。
+
+baidu了一下，迅速解决问题：原来这个class所在包没有被添加到build path中。
+
+解决方法：在左侧的package explorer中右击这个class所在包的上一级目录--build path--use as source folder。这样就解决问题了。
+
+重新打开class，再run一下，ok了。
+
+看这张图，src就是在build path中的（仔细观察src的图标） 
+相对的，resource就只是个普通文件夹，而不在build path中（图标和src不一样吧？） 
+然后我又在resource下新建了文件夹和文件，比较下，包和文件夹的图标也是不一样的。
+
+现在，我要把resource也加到build path中。（方法就是右击resource--build path--use as source folder）
+这样，src和resource就都在build path中了。
+最后，解释下，什么叫“在build path中”？你可以这么理解，eclipse中，在build path下的类可以被编译运行，在build path下的配置文件可以被类以相对路径直接读写。
+
+
+
+http://xwv.iteye.com/blog/1626644
+http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Freference%2Fref-properties-build-path.htm

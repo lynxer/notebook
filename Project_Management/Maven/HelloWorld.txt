@@ -73,5 +73,5 @@ mvn help : all-profiles
 13. 编译测试的内容：mvn test-compile  
 14. 只打jar包: mvn jar:jar  
 15. 只测试而不编译，也不测试编译：mvn test -skipping compile -skipping test-compile 
-	  ( -skipping 的灵活运用，当然也可以用于其他组合命令)  
+	  ( -skipping 的灵活运用，当然也可以用于其他组合命令)  mvn install -Dmaven.test.skip = true
 16. 清除eclipse的一些系统设置:mvn eclipse:clean

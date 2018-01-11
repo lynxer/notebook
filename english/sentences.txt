@@ -45,3 +45,5 @@ Docker offers three different ways to mount data into a container from the Docke
 ====== other ======
 
 According to the RHS Dictionary of Gardening, there are approximately 1,000 species of bamboos.
+
+We laughed and kept saying "see you soon", but inside we both knew we'd never see each other again.
