@@ -6,7 +6,7 @@ Creation-Date: 2017-05-01T23:33:34+08:00
 Created 星期一 01 五月 2017
 
 Settings: Ctrl Alt S
-Reformat code: Ctrl Shift F
+Reformat code: Ctrl Alt L
 Navigate:
 	Back: Alt + <-
 	Forward: Alt + ->

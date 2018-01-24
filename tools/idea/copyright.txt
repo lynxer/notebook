@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-01-19T19:05:47+08:00
+
+====== copyright ======
+Created Friday 19 January 2018
+
+IntelliJ IDEA设置copyright和类注释信息
