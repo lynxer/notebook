@@ -5,3 +5,8 @@ Creation-Date: 2016-06-14T11:11:03+08:00
 ====== ubuntu ======
 Created 星期二 14 六月 2016
 
+system boot very slow:
+1 systemd-analyze blame
+2. systemd-analyze plot
+
+http://blog.csdn.net/evane1890/article/details/1561882
