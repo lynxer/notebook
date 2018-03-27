@@ -28,3 +28,6 @@ http://www.importnew.com/16181.html
 Java Profiling 工具
 http://www.ibm.com/developerworks/cn/java/j-lo-profiling/
 https://www.ibm.com/developerworks/cn/opensource/os-cn-ecl-tptpplugin/
+
+java basic
+http://www.tutorialspoint.com/java/java_serialization.htm

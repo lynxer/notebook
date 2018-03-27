@@ -28,3 +28,7 @@ ko-KR.yuna-ml.xpremium: "2.0.1"
 prio3
 en-US.tom.xpremium: "3.2.2"
 es-ES.marisol-ml.xpremium: "1.2.0"
+
+p1 downgrade:
+remove: en-US.zoe-mlsc.xpremium-high: "2.2.0"
+add: en-US.zoe-mlsc.xpremium-high: "2.1.0"

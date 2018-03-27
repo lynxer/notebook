@@ -1,0 +1,147 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-03-27T17:39:29+08:00
+
+====== yaml ======
+Created Tuesday 27 March 2018
+
+[[PyYAML]]
+http://www.ruanyifeng.com/blog/2016/07/yaml.html?f=tt
+
+===== 语法规则 =====
+总的来说，语法没什么难度，也是人们司空见惯的了。 
+- 大小写敏感 
+- 使用缩进表示层级关系 
+- 缩进时不允许使用Tab键，只允许使用空格。 
+- 缩进的空格数目不重要，只要相同层级的元素左侧对齐即可
+
+另外，和Python的注释方式一样，以#号作为注释符，很人性化了吧。
+
+===== 数据结构 =====
+YAML本身语法很简单，但是却可以基于此实现比较强大的配置功能。思考一下，作为一个配置文件，可能出现的情况有哪些？
+
+一连串类型一致的数据？
+基本的数据类型？
+key-value组合？
+其实，认真的思考一下就会明白了。YAML不是一个凭空捏造的数据格式，而是经过了实际考验的人性化设计的一套规范。针对上面的问题，答案就是YAML本身支持的数据结构了，也很好记忆。
+
+列表，数组（一串类型相同或者不同的组合）
+纯量（类似于原子性，不可再分）
+对象（键值对的组合，一对一的特性）
+
+== 列表，数组 ==
+类比Python语言，YAML性质与其保持一致。但是书写方式上来说嘛，也可以是不一致的。大致有如下两种：
+
+[]式：
+['数组1','数组2','数组3','数组4','数组5']
+
+竖-式：
+- 数组1
+- 数组2
+- 数组3
+- 数组4
+- 数组5
+注意好符合一开始讲的语法规则即可。
+
+== 原子量 ==
+也即是纯量，不能再细分的数据结构。类比其他的编程语言，YAML也充分地考虑到了这一点。
+
+数值型： 直接书写即可。不区分整型还是浮点型。
+
+字符串： 字符串可以加引号，也可以不加。
+单引号内会自动的转义特殊字符，对单引号转义是使用两个单引号，其表示一个原生的单引号。
+双引号内保持原字符不变。
+
+== 日期，时间 ==
+
+时间： ISO8601 格式。如2001-12-14t21:59:43.10-05:00
+日期： 采用复合 iso8601 格式的年、月、日表示。如1970-01-01
+关于强制类型转换： 可以通过两个英文感叹号+新的数据类型的方式来进行强制的类型转换。
+
+如：
+
+e: !!str 123
+f: !!str true
+将变为：
+
+{ e: '123', f: 'true' }
+除此简单的介绍之外，YAML还有很多更为奇妙的语法，但是掌握了这些基础的使用，写一个配置文件基本上就够用了。如果有兴趣的话，可以在深入的研究一下。
+
+===== 案例 =====
+
+name: Tom Smith
+age: 37
+spouse:
+	name: Jane Smith
+	age: 25
+children:
+ - name: Jimmy Smith
+   age: 15
+ - name1: Jenny Smith
+   age1: 12
+
+== load ==
+# coding:utf-8
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf8')
+#    __author__ = '郭 璞'
+#    __date__ = '2016/10/31'
+#    __Desc__ = YAML 在Python中的应用
+
+import yaml
+
+stream = file('example.yaml', 'r')
+data = yaml.load(stream)
+print data['children'][0]['name']
+
+== dump ==
+# coding:utf-8
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf8')
+#    __author__ = '郭 璞'
+#    __date__ = '2016/10/31'
+#    __Desc__ = YAML 在Python中的应用
+
+import yaml
+
+s = 'I have an apple'
+print yaml.dump(s)
+
+lists = ['zhangsan', 'lisi', 'wangwu', 'zhaoliu']
+print yaml.dump(lists)
+
+
+class Person(object):
+	def __init__(self, name, age):
+		self.name = name
+		self.age = age
+
+p1 = Person('zhangsan', 19)
+p2 = Person('lisi', 20)
+p3 = Person('wangwu', 21)
+
+persons = [p1, p2, p3]
+
+print yaml.dump(persons)
+
+== result ==
+I have an apple
+...
+
+[zhangsan, lisi, wangwu, zhaoliu]
+
+- !!python/object:__main__.Person {age: 19, name: zhangsan}
+- !!python/object:__main__.Person {age: 20, name: lisi}
+- !!python/object:__main__.Person {age: 21, name: wangwu}
+
+===== 总结 =====
+这样的话，类比json库的学习，yaml库也可以很好的被应用了。 
+使用这样的方式可以最大限度的解耦和代码，实现更高的可移植性。
+
+同样，写配置文件也不一定要用YAML，还可以有很多的选择，比如ConfigParser了， .ini了，还可以自定义（借助于正则表达式做好相关的存取即可）。
+
+没有哪种是最好的，只有适合的才是最好的。在不同的场合选择适合自己的配置文件的书写方式即可

@@ -1,0 +1,43 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-03-12T15:42:45+08:00
+
+====== forEach ======
+Created Monday 12 March 2018
+
+===== Java 8 中 list 和 map 的循环遍历 - forEach的用法。 =====
+private static void lambdaLoopList(List<User> list) {  
+	//三行循环效果相同  
+	//list.forEach(user -> System.out.println(user.toString()));  
+	//list.forEach(user -> System.out.println(user));//下面一行代码就是简写形式  
+	list.forEach(System.out::println);  
+	println();  
+}
+前面的user是自己声明的变量， ->    这个箭头后面的呢就是对这个变量的操作。后面要是多行代码的话，就的弄个大括号，括起来。
+左边是容器（可以是类名，实例名），中间是”::”，右边是相应的方法名。
+private static void lambdaOperateList(List<User> list) {  
+	System.out.println("对list集合进行操作：user's name + “_1” ");  
+	//list.forEach(user -> user.setName(user.getName() + "_1"));  
+	list.forEach(user -> {  
+		String name = user.getName();  
+		user.setName(name + "_1");  
+  
+		//在循环的时候，不能修改list结构(包括新增和删除).  
+		//不然会出现此异常：Exception in thread "main" java.util.ConcurrentModificationException  
+		//if(user.getPwd().contains("1")){  
+		//    list.remove(user);  
+		//}  
+		//if(user.getPwd().contains("1")){a  
+		//    list.add(new User("10","10"));  
+		//}  
+	});  
+	//操作完，循环输出一下，看下是否操作OK。  
+	list.forEach(System.out::println);  
+	println();  
+} 
+
+private static void lambdaLoopMap(Map<Integer, Integer> map) {  
+	System.out.println("Java 8 遍历map");  
+	map.forEach((k, v) -> System.out.println("k " + k + " v " + v));  
+	println();  
+}  
