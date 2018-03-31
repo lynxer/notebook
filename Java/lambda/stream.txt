@@ -1,0 +1,85 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-03-12T15:43:10+08:00
+
+====== stream ======
+Created Monday 12 March 2018
+
+===== Java 8 还有个 stream ，流，这个流不是咱一般的文件流的那个流。 =====
+先看这个stream里面的filter方法：对操作集合，按某个条件进行过滤。
+关于filter 用法，就是里面就是个过滤这个集合的条件，必须是返回true 或者false。才可以。
+/** 
+ * 测试collection.stream().filter() 
+ */  
+private static void testStreamFilter() {  
+	List<User> list = getLoopList();  
+	System.out.println("对集合进行过滤：user name 包含 1 的用户");  
+	List<User> filtered = list.stream().filter(s -> s.getName().contains("1")).collect(Collectors.toList());  
+	filtered.forEach(user -> System.out.println(user.toString()));  
+	println();  
+} 
+/** 
+ * 测试collection.stream().map() 
+ */  
+private static void testStreamMap() {  
+	List<User> list = getLoopList();  
+	System.out.println("对集合进行操作：user name + “1” ");  
+	List<String> nameList = list.stream().map(User::getName).collect(Collectors.toList());  
+	nameList.forEach(System.out::print);  
+	println();  
+}  
+
+http://blog.csdn.net/qq_27093465/article/details/77750806
+
+
+关于串行和并行sream
+package j8.lambda;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class UserPerformance {
+  public static void main(String[] args) {
+	List<User> list = UserUtil.getLoopList();
+//    normalBeforeLoop(list);
+	normalAfterLoop(list);
+	notNormalAfterLoop(list);
+  }
+
+  private static void notNormalAfterLoop(List<User> list) {
+	long a = System.currentTimeMillis();
+	list.stream().parallel().forEach(user -> {
+	  String name = user.getName();
+	  user.setName(name + "_" + (int) (Math.random() * 100));
+	  System.out.print(user.toString());
+	});
+	System.out.println(" list.stream().parallel().forEach 执行耗时 : " + (System.currentTimeMillis() - a) / 1000f + " 秒 ");
+  }
+
+  private static void normalAfterLoop(List<User> list) {
+	long a = System.currentTimeMillis();
+	list.stream().forEach(user -> {
+	  String name = user.getName();
+	  user.setName(name + "_" + (int) (Math.random() * 100));
+	  System.out.print(user.toString());
+	});
+
+	System.out.println(" list.stream().forEach 执行耗时 : " + (System.currentTimeMillis() - a) / 1000f + " 秒 ");
+	a = System.currentTimeMillis();
+	list.forEach(user -> {
+	  String name = user.getName();
+	  user.setName(name + "_" + (int) (Math.random() * 100));
+	  System.out.print(user.toString());
+	});
+	System.out.println(" list.forEach 执行耗时 : " + (System.currentTimeMillis() - a) / 1000f + " 秒 ");
+  }
+
+  private static void normalBeforeLoop(List<String> list) {
+	long a = System.currentTimeMillis();
+	for (String s : list) {
+	  System.out.print(s);
+	}
+	System.out.println(" for each 执行耗时 : " + (System.currentTimeMillis() - a) / 1000f + " 秒 ");
+  }
+
+}

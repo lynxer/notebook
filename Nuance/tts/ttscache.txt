@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-03-08T15:11:27+08:00
+
+====== ttscache ======
+Created Thursday 08 March 2018
+
+1 user redis in docker
+2 Java code to use redis
+3 k8s

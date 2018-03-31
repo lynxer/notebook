@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-03-12T16:10:57+08:00
+
+====== redis ======
+Created Monday 12 March 2018
+
+一.docker运行单个redis
+
+1.拉取镜像: docker pull redis
+
+2.运行容器(本地image是:docker.io/redis latest 8f2e175b3bd1 2 weeks ago 106.6 MB): docker run -d --name redis-S -v /home/tym/docker/redis/data/:/data docker.io/redis redis-server 
+//-d是后台运行; 
+//–name是设置别名 
+// -v /home/tym/docker/redis/data/:/data是将 /home/tym/docker/redis/data/挂载到容器的/data(数据默认存储在VOLUME /data目录下,可以使用$PWD/data代替/home/tym/docker/redis/data/)
+
+3.运行客户端:docker run -it --link redis-S --rm docker.io/redis redis-cli -h redis-S -p 6379 
+//-it是交互模式(-i: 以交互模式运行容器,-t: 为容器重新分配一个伪输入终端) 
+//–link 连接另一个容器,这样就可以使用容器名作为host了 
+//–rm 自动清理容器,因为这里是测试,属于前台程序
+
+二.docker运行redis主从复制模式（以两个数据库为例） 
+主从复制模式:主数据库(master)可以读写,从数据库(slave)只能读;主数据库的写会同步到从数据库,从数据库主要负责读操作。一个主数据库可以拥有多个从数据库，一个从数据库只能拥有一个主数据库。
+
+1.启动两个服务端:
+docker run -d --name redis-master -v /home/tym/docker/redis/data/:/data  docker.io/redis redis-server
+docker run  -d --name redis-slave --link redis-master docker.io/redis redis-server --port 6380 --slaveof redis-master 6379
+
+docker run -it --link redis-master --rm docker.io/redis redis-cli -h redis-master -p 6379
+docker run -it --link redis-slave --rm docker.io/redis redis-cli -h redis-slave -p 6380
+
+{{.\pasted_image.png}}

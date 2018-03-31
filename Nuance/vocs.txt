@@ -6,3 +6,8 @@ Creation-Date: 2018-01-09T14:30:41+08:00
 Created Tuesday 09 January 2018
 
 http://127.0.0.1:9090/vocs/caps
+
+set PATH=E:\vocvoc_int\default\v6\dbg64\common\speech\components;E:\vocvoc_int\default\vocs\dbg64\ttsvocs\server;E:\vocvoc_int\default\vocs\dbg64\ttsvocs\client\lib;%PATH%;
+set VOCALIZER_SDK=E:\vocvoc_int\default\v6\dbg64
+
+vocsd -l- -d4 -t10 -p9090 

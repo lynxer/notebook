@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-03-19T14:02:59+08:00
+
+====== keywords ======
+Created Monday 19 March 2018
+
+=== volatile ===
+volatile是一种轻量级的同步机制，它主要有两个特性：一是保证共享变量对所有线程的可见性；二是禁止指令重排序优化。同时需要注意的是，volatile对于单个的共享变量的读/写具有原子性，但是像num++这种复合操作，volatile无法保证其原子性
+https://www.cnblogs.com/chengxiao/p/6528109.html

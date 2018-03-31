@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-03-09T13:25:25+08:00
+
+====== sspt163 ======
+Created Friday 09 March 2018
+prio1
+de-DE.ina.xpremium: "3.1.0"
+de-DE.petra-ml.xpremium-high: "1.0.0"
+en-US.ava-ml.xpremium-high: "1.0.0"
+en-US.zoe-ml.xpremium: "1.2.1"
+es-AR.isabela.xpremium: "1.0.3"
+es-CO.ximena.xpremium: "1.0.0"
+es-MX.mariana.xpremium: "1.0.5"
+sz-CN.fangfang-ml.xpremium: "1.0.0"
+zh-CN.junbo.xpremium: "1.0.1"
+zh-CN.lili-ml.xpremium-high: "1.0.1"
+
+prio2
+zh-CN.lili-ml.xpremium: "2.0.0"
+zh-CN.tiantian-ml.xpremium: "2.0.0"
+zh-CN.binbin-ml.xpremium: "2.0.0"
+tr-TR.cem-ml.xpremium: "3.0.0"
+ko-KR.sora.xpremium: "3.0.1"
+ko-KR.yuna-ml.xpremium: "2.0.1"
+
+
+prio3
+en-US.tom.xpremium: "3.2.2"
+es-ES.marisol-ml.xpremium: "1.2.0"
+
+p1 downgrade:
+remove: en-US.zoe-mlsc.xpremium-high: "2.2.0"
+add: en-US.zoe-mlsc.xpremium-high: "2.1.0"
