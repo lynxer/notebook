@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-03-31T10:42:31+08:00
+
+====== hotkeys ======
+Created Saturday 31 March 2018
+
+Ctrl+Alt+T，直接打开终端
