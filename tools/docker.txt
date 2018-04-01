@@ -5,3 +5,16 @@ Creation-Date: 2017-09-01T17:20:21+08:00
 ====== docker ======
 Created Friday 01 September 2017
 
+docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo --name db postgres:9.4
+
+docker run -d -p 8069:8069 --name odoo10 --link db:db -t [[odoo:10]]
+
+==== about connecting to pg ====
+docker run -it --user odoo --rm --link db:postgres postgres:9.4 psql -h postgres
+
+psql -h 192.168.31.23 -p 5432 -U odoo
+
+docker exec -it 05b3a3471f6f bash
+root@05b3a3471f6f:/# psql -U postgres
+postgres-# CREATE DATABASE mytest;
+postgres-# \q
