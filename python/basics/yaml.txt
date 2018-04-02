@@ -5,7 +5,6 @@ Creation-Date: 2018-03-27T17:39:29+08:00
 ====== yaml ======
 Created Tuesday 27 March 2018
 
-[[PyYAML]]
 http://www.ruanyifeng.com/blog/2016/07/yaml.html?f=tt
 
 ===== 语法规则 =====
@@ -145,3 +144,14 @@ I have an apple
 同样，写配置文件也不一定要用YAML，还可以有很多的选择，比如ConfigParser了， .ini了，还可以自定义（借助于正则表达式做好相关的存取即可）。
 
 没有哪种是最好的，只有适合的才是最好的。在不同的场合选择适合自己的配置文件的书写方式即可
+
+
+=== with files ===
+import yaml  
+f = open('tree.yaml')  
+dataMap = yaml.load(f)  
+f.close() 
+
+f = open('newtree.yaml', "w")  
+yaml.dump(dataMap, f)  
+f.close()
